@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Property_Rental_Management_Web_Site.Models.Apartment>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h3>Welcome - @ViewBag.Username</h3>
+<h5>All Apartments:</h5>
+
+@*<p>
+	@Html.ActionLink("Create New", "Create")
+</p>*@
+
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Address)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Extra)
+		</th>
+		<th>
+			Manager
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Price) $
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Status)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model) {
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Address.Street), 
+				@Html.DisplayFor(modelItem => item.Address.Unit), 
+				@Html.DisplayFor(modelItem => item.Address.ZipCode), 
+				@Html.DisplayFor(modelItem => item.Address.City)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Extra)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.User.FirstName)
+				@Html.DisplayFor(modelItem => item.User.LastName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Price)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Status)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.ApartmentID }) |
+				@Html.ActionLink("Details", "Details", new { id = item.ApartmentID }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.ApartmentID })
+			</td>
+		</tr>
+	}
+
+</table>

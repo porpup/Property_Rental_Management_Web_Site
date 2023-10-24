@@ -1,0 +1,60 @@
+﻿@model Property_Rental_Management_Web_Site.Models.Message
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Message</h4>
+    <hr />
+		<dl class="dl-horizontal">
+			<dt>
+				@Html.DisplayNameFor(model => model.Date)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Date)
+			</dd>
+
+			<dt>
+				Apartment ID
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Apartment.ApartmentID)
+			</dd>
+
+			<dt>
+				Sender
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.User1.FirstName)
+				@Html.DisplayFor(model => model.User1.LastName)
+			</dd>
+
+			<dt>
+				Recipient
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.User.FirstName)
+				@Html.DisplayFor(model => model.User.LastName)
+			</dd>
+
+			<dt>
+				@Html.DisplayNameFor(model => model.Text)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.Text)
+			</dd>
+
+		</dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MessageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

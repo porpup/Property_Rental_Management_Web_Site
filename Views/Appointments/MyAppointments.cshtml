@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Property_Rental_Management_Web_Site.Models.Appointment>
+
+@{
+	ViewBag.Title = "My Appointments";
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - My ASP.NET Application</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+		<div class="container">
+			<div class="navbar-brand">Property Rental</div>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+							aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+				<ul class="navbar-nav flex-grow-1">
+					<li>@Html.ActionLink("Apartments", "Index", "Tenant", new { area = "" }, new { @class = "nav-link" })</li>
+					<li>@Html.ActionLink("Messages", "MyMessages", "Messages", new { area = "" }, new { @class = "nav-link" })</li>
+					<li>@Html.ActionLink("Appointments", "MyAppointments", "Appointments", new { area = "" }, new { @class = "nav-link" })</li>
+				</ul>
+				<ul class="nav nav-pills nav-fill">
+					<li>@Html.ActionLink("Logout", "Login", "Login", new { area = "" }, new { @class = "nav-link active" })</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container body-content">
+		<main>
+			<h3>Welcome - @ViewBag.Username</h3>
+			<h5>My Appointments:</h5>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Address</th>
+						<th>Manager</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var appointment in Model) {
+						<tr>
+							<td>@appointment.Date</td>
+							<td>
+								@appointment.Apartment.Address.Street, 
+								@appointment.Apartment.Address.Unit, 
+								@appointment.Apartment.Address.ZipCode, 
+								@appointment.Apartment.Address.City
+							<td>
+								@appointment.User.FirstName
+								@appointment.User.LastName
+							</td>
+							<td>@appointment.Status</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+
+		</main>
+		<div class="container body-content">
+			<hr />
+			<footer>
+				<p>&copy; @DateTime.Now.Year - Property Rental Website</p>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

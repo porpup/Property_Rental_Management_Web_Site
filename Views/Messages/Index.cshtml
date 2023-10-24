@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Property_Rental_Management_Web_Site.Models.Message>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h3>Welcome - @ViewBag.Username</h3>
+<h5>All Messages:</h5>
+
+@*<p>
+			@Html.ActionLink("Create New", "Create")
+	</p>*@
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Date)
+		</th>
+		<th>
+			Apartment ID
+		</th>
+		<th>
+			Sender
+		</th>
+		<th>
+			Recipient
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Text)
+		</th>
+	</tr>
+
+	@foreach (var item in Model) {
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Date)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Apartment.ApartmentID)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.User1.FirstName)
+				@Html.DisplayFor(modelItem => item.User1.LastName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.User.FirstName)
+				@Html.DisplayFor(modelItem => item.User.LastName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Text)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.MessageID }) |
+				@Html.ActionLink("Details", "Details", new { id = item.MessageID }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.MessageID })
+			</td>
+		</tr>
+	}
+
+</table>

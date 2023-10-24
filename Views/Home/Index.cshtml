@@ -1,0 +1,57 @@
+﻿@{
+	ViewBag.Title = "Home Page";
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - My ASP.NET Application</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+		<div class="container">
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+							aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
+				<ul class="nav nav-pills nav-fill">
+					<li class="nav-item">@Html.ActionLink("Login", "Login", "Login", new { area = "" }, new { @class = "nav-link active" })</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container body-content">
+		<main>
+
+			<h2 style="color: blue">Welcome to Property Rental Management Website</h2>
+			<h5>Available Apartments:</h5>
+			<table class="table">
+				<tr>
+					<th>Address</th>
+					<th>Price $</th>
+					<th>Extras</th>
+				</tr>
+				@foreach (var apartment in Model) {
+					<tr>
+						<td>@apartment.Address.Street @apartment.Address.Unit, @apartment.Address.City, @apartment.Address.Province, @apartment.Address.ZipCode</td>
+						<td>@apartment.Price</td>
+						<td>@apartment.Extra</td>
+					</tr>
+				}
+			</table>
+		</main>
+		<div class="container body-content">
+			<hr />
+			<footer>
+				<p>&copy; @DateTime.Now.Year - Property Rental Website</p>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>
