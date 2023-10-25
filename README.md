@@ -1,4 +1,4 @@
-# Property_Rental_Management_Web_Site
+# Property Rental Management Web Site
 ## I.	PROJECT DESCRIPTION
 
 The purpose of the home Rental Management Website is to make renting a home easier for prospective renters, owners, and managers. With the help of this web-based platform, users can effectively manage properties, look for suitable residences, and connect with one another all in one place. Three main user roles are available in the system: Property Owner, Property Manager, and Potential Tenants. The system provides an easy-to-use interface.
