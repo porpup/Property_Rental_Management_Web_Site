@@ -8,13 +8,6 @@ The purpose of the home Rental Management Website is to make renting a home easi
 •	Create, update, delete, search, and list property manager accounts.\
 •	Update, delete, search, and list potential tenant accounts.\
 •	Maintain full control over the entire web site.
-#### Property Manager:
-•	Perform CRUD operations related to buildings, such as updating, viewing and deleting building details.\
-•	Perform CRUD operations related to apartments, including adding and managing apartment listings.\
-•	Keep track of the status of apartments, indicating whether they are available for rent.\
-•	Schedule appointments with potential tenants interested in viewing the properties.\
-•	View messages from potential tenants.\
-•	Report any important events or issues to the property owner when necessary.
 #### Potential Tenants:
 •	Create an online account through the Property Rental Management Web Site.\
 •	View apartment listings that suit their requirements.\
@@ -90,7 +83,5 @@ The purpose of the home Rental Management Website is to make renting a home easi
  
 
 ## III. CONCLUSION
-
-
 As we come to the end of our project on the Property Rental Management Website, it is critical to recognize the practical experience and information we have acquired. We have direct experience with how an idea can develop into a useful online application. We've overcome obstacles in the real world, worked well as a team, and mastered the use of tools and technology. Web development has become more approachable because of our experience with ASP.NET Core MVC, from structuring websites to interacting with databases. We get invaluable skills from this hands-on experience that will be crucial for our next software projects and career aspirations in software development.
 
